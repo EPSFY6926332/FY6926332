@@ -34,7 +34,55 @@
   <head>
     <title>My conference project</title>
   </head>
+  <! --Verifies Button-->
   <div id="last-updated">Loading last time....</div>
+
+  <button onClick="verifyLastUpdatedTime()" style="display: block; margin:  10px auto;  padding:  8px  16px;">
+    Verify last modified time
+  </button>
+
+  <script>
+    aync function getLastUpdatedTime() {
+      const username = 'EPSFY6926332';
+      const repo = 'FY6926332'
+
+      const url = `https://api.github.com/repos/${EPSFY6926332}/${FY6926332}/commits`;
+
+      try {
+        const response = await fetch(url, {
+          method:  'GET',
+          headers:  {
+            'Accept': 'application/vnd.github.v3+json',
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error(`Error fetching data: ${response.status} - {response.status.Text}`);
+        }
+
+        const commits = await.response.json();
+        if (commits && commits.length > 0) {
+          const lastCommitDate = new Date(commits[0].commit.commiter.date);
+
+          //Displays the time on load
+          document.getElementById('last-updated').innerText = `Last Modified Time:  $(lastCommitDate.toLocaleString()}`;
+        } else {
+          document.getElementById('last-updated').innerText = 'No commits found in the repository';
+        }
+    } catch (error) {
+        console.error('Erorr fetching in the last updated time:', error);
+        document.getElementById('last-updated').innerText = 'Error fetching update time. Please check the repository details.';
+    }
+  }
+  async Function verifyLastUpdatedTime() {
+    document.getElementById('last-updated').innerText = 'Verifying....';
+    await getLastUpdatedTime();
+    alert("Last modified time has been succesfully verified from GITHUB API");
+  }
+
+  window.onload = getLastUpdatedTime;
+  </script>
+  
   <body>
 <body style="background-color:#FFFFFF;margin-left:50px;">
   <!table of contents>
