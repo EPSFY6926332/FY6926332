@@ -57,7 +57,7 @@
         });
 
         if (!response.ok) {
-          throw new Error(`Error fetching data: ${response.status} - {response.status.Text}`);
+          throw new Error(`Error fetching data: ${response.status} - {response.statusText}`);
         }
 
         const commits = await.response.json();
