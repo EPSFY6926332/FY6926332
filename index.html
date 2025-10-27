@@ -32,7 +32,7 @@
 
   <h3 id="Abstract">Abstract</h3>
   <p class="ex1">
-    <pre id="Abstract">
+    <pre id="Abstract_InText">
 The study of galaxy formation is undeniably essential; it plays a crucial role in understanding the structure of the universe. The aim of this paper is to explore galaxy formation by evaluating the efficiency of computational models, specifically hydrodynamical simulations, 
 which are a kind of computer model that employ a wide range of mathematical equations to model fluid dynamics and explore how these particles interact with each other in the context of galaxies such as the ones responsible for producing dark matter and baryonic matter. 
 To investigate this proposition, an investigation was carried out by selecting one of the datasets produced by FLAMINGO, a hydrodynamical simulation that was produced by physicists at the university of Leiden that models the large-scale structure of the universe. 
@@ -43,7 +43,7 @@ In addition, it was effective in reproducing to cluster gas fractions to about 1
 
   <h3 id="Introduction">Introduction</h3>
   <p class="ex1">
-    <pre id="Introduction">
+    <pre id="Introduction_InText">
 “Active Learning (Angluin, 1988, Cohn et al., 1994) is a paradigm where a concept is learnt by an
 intelligent machine through the interaction of an oracle with the machine system, over a sequence of
 learning epochs. A distinctive component in an active system is the querying strategy, used to sample
@@ -53,16 +53,16 @@ to improve the classification model.”
   </p>
 
   <h3 id="Methodology">Methodology</h3>
-  <p class="ex1"><pre id="Methodology"></pre></p>
+  <p class="ex1"><pre id="Methodology_InText"></pre></p>
 
   <h3 id="Analysis and discussion">Analysis and discussion</h3>
-  <p class="ex1"><pre id="Analysis and discussion"></pre></p>
+  <p class="ex1"><pre id="Analysis_InText"></pre></p>
 
   <h3 id="Conclusion">Conclusion</h3>
-  <p class="ex1"><pre id="Conclusion"></pre></p>
+  <p class="ex1"><pre id="Conclusion_InText"></pre></p>
 
   <h3 id="References">References</h3>
-  <p class="ex1"><pre id="References">Angluin, D (1988), Queries and concept learning</pre></p>
+  <p class="ex1"><pre id="References_InText">Angluin, D (1988), Queries and concept learning</pre></p>
 
   <script>
     async function getLastUpdatedTime() {
@@ -108,13 +108,14 @@ to improve the classification model.”
 
   // Function to calculate and display total word count for sections after Abstract and before References
   function displayTotalWordCount() {
-    const IntroductionCount = displayWordCount("Introduction");
-    const MethodologyCount = displayWordCount("Methodology");
-    const AnalysisCount = displayWordCount("Analysis and discussion");
-    const ConclusionCount = displayWordCount("Conclusion");
-    const ReferencesCount = displayWordCount("References");
+    const AbstractCount = displayWordCount("Abstract_InText");
+    const IntroductionCount = displayWordCount("Introduction_InText");
+    const MethodologyCount = displayWordCount("Methodology_InText");
+    const AnalysisCount = displayWordCount("Analysis_InText");
+    const ConclusionCount = displayWordCount("Conclusion_InText");
+    const ReferencesCount = displayWordCount("References_InText");
 
-    const totalWordCount = IntroductionCount + MethodologyCount + AnalysisCount + ConclusionCount +ReferencesCount;
+    const totalWordCount = AbstractCount + IntroductionCount + MethodologyCount + AnalysisCount + ConclusionCount +ReferencesCount;
     document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }
 
