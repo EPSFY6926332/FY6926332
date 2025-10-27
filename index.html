@@ -65,33 +65,57 @@ to improve the classification model.”
   <p class="ex1"><pre id="References">Angluin, D (1988), Queries and concept learning</pre></p>
 
   <script>
-  function countWordsInNodes(nodeList) {
-    let total = 0;
-    nodeList.forEach(node => {
-      const raw = (node.innerText || node.textContent || '').replace(/[\u200B-\u200D\uFEFF]/g, ' ');
-      const text = raw.replace(/\s+/g, ' ').trim();
-      if (text) total += text.split(' ').length;
-    });
-    return total;
-  }
+    async function getLastUpdatedTime() {
+      const username = 'EPSFY6926332';
+      const repo = 'FY6926332';
+      const url = `https://api.github.com/repos/${username}/${repo}/commits`;
+      try {
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: { 'Accept': 'application/vnd.github.v3+json' }
+        });
+        if (!response.ok) throw new Error(`Error fetching data: ${response.status}`);
+        const commits = await response.json();
+        if (commits && commits.length > 0) {
+          const lastCommitDate = new Date(commits[0].commit.committer.date);
+          document.getElementById('last-updated').innerText =
+            `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
+        } else {
+          document.getElementById('last-updated').innerText = 'No commits found in the repository.';
+        }
+      } catch (error) {
+        console.error('Error fetching update time:', error);
+        document.getElementById('last-updated').innerText = 'Error fetching update time.';
+      }
+    }
 
-  function displayTotalWordCount() {
-    const preNodes = document.querySelectorAll('pre');
-    const paraNodes = document.querySelectorAll('p');
-    const headerNodes = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    async function verifyLastUpdatedTime() {
+      document.getElementById('last-updated').innerText = 'Verifying...';
+      await getLastUpdatedTime();
+      alert("Last modified time has been successfully verified from GitHub API.");
+    }
 
-    const total =
-      countWordsInNodes(preNodes) +
-      countWordsInNodes(paraNodes) +
-      countWordsInNodes(headerNodes);
+    function displayWordCount(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (!element) return 0;
+      // normalize newlines and spaces
+      const text = element.textContent.replace(/\s+/g, ' ').trim();
+      const words = text.split(' ').filter(word => word.length > 0);
+      return words.length;
+    }
 
-    const out = document.getElementById('totalWordCount');
-    if (out) out.innerText = `Total word count: ${total}`;
-  }
+    function displayTotalWordCount() {
+      const sections = ["Abstract", "Introduction", "Methodology", "Analysis and discussion", "Conclusion", "References"];
+      let total = 0;
+      sections.forEach(id => total += displayWordCount(id));
+      document.getElementById("totalWordCount").innerText = `Total word count: ${total}`;
+    }
 
-  window.addEventListener('load', () => {
-    displayTotalWordCount();
-  });
-</script>
+    window.onload = function() {
+      getLastUpdatedTime();
+      displayTotalWordCount();
+    };
+  </script>
+
 </body>
 </html>
