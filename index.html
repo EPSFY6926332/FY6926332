@@ -97,21 +97,29 @@ to improve the classification model.”
   </script>
 
   <script>
-    function displayWordCount(sectionId) {
-      const text = document.getElementById(sectionId).textContent;
-      const wordArray = text.trim().split(/\s+/);
-      return wordArray.length;
-    }
+    // Function to calculate and display word count for a specified section
+  function displayWordCount(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (!element) return 0;
+    const text = element.textContent.trim().replace(/\s+/g, ' ');
+    const wordArray = text.split(' ').filter(word => word.length > 0);
+    return wordArray.length;
+  }
 
-    function displayTotalWordCount() {
-      const IntroductionCount = displayWordCount("Introduction_InText");
-      const AnalysisCount = displayWordCount("Analysis_InText");
-      const totalWordCount = IntroductionCount + AnalysisCount;
-      document.getElementById("totalWordCount").innerText =
-        `Total word count: ${totalWordCount}`;
-    }
+  // Function to calculate and display total word count for sections after Abstract and before References
+  function displayTotalWordCount() {
+    const IntroductionCount = displayWordCount("Introduction");
+    const MethodologyCount = displayWordCount("Methodology");
+    const AnalysisCount = displayWordCount("Analysis and discussion");
+    const ConclusionCount = displayWordCount("Conclusion");
+    const ReferencesCount = displayWordCount("References");
 
-    window.addEventListener("load", displayTotalWordCount);
+    const totalWordCount = IntroductionCount + MethodologyCount + AnalysisCount + ConclusionCount +ReferencesCount;
+    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+  }
+
+  // Run the function when the page loads
+  window.addEventListener("load", displayTotalWordCount);
   </script>
 
 </body>
