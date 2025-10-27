@@ -94,27 +94,6 @@ to improve the classification model.”
       await getLastUpdatedTime();
       alert("Last modified time has been successfully verified from GitHub API.");
     }
-
-    function displayWordCountFromPre(el) {
-      if (!el) return 0;
-      const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
-      if (!text) return 0;
-      return text.split(' ').length;
-    }
-
-    function displayTotalWordCount() {
-      // Count ALL <pre> blocks only (the actual paragraphs),
-      // avoiding the duplicate header IDs.
-      const pres = document.querySelectorAll('pre');
-      let total = 0;
-      pres.forEach(pre => { total += displayWordCountFromPre(pre); });
-      document.getElementById("totalWordCount").innerText = `Total word count: ${total}`;
-    }
-
-    window.onload = function() {
-      getLastUpdatedTime();
-      displayTotalWordCount();
-    };
   </script>
 
 </body>
