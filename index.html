@@ -96,5 +96,23 @@ to improve the classification model.”
     }
   </script>
 
+  <script>
+    function displayWordCount(sectionId) {
+      const text = document.getElementById(sectionId).textContent;
+      const wordArray = text.trim().split(/\s+/);
+      return wordArray.length;
+    }
+
+    function displayTotalWordCount() {
+      const IntroductionCount = displayWordCount("Introduction_InText");
+      const AnalysisCount = displayWordCount("Analysis_InText");
+      const totalWordCount = IntroductionCount + AnalysisCount;
+      document.getElementById("totalWordCount").innerText =
+        `Total word count: ${totalWordCount}`;
+    }
+
+    window.addEventListener("load", displayTotalWordCount);
+  </script>
+
 </body>
 </html>
