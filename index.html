@@ -4,19 +4,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>My conference project</title>
   <style>
-    table { font-family:arial, sans-serif; border-collapse: collapse; width: 30%; }
-    td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }
-    tr:nth-child(even) { background-color: #dddddd; }
     p.ex1 { margin-left: 250px; }
     .mySlides { display:none; }
 
-    #toc-container{
-      background-color: MediumSeaGreen;
+    .toc-wrapper{
+      background-color: #fff;
+      box-shadow: 0 3px 30px rgb(0 0 0 0 / .24);
+      max-width: 600px;
+      margin: auto;
+      border-radius: 50px;
     }
 
-    .toc-title{
-      background-color: Violet;
+    .toc-header{
+      background: black;
+      padding: 30px;
+      border-radius: 50px 50px 0 100px;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
     }
+
+    .toc-heading{
+      font-size: 30px;
+      color: #fff;
+      margin: 0;
+      text-align: center;
+      width: 100%;
+      font-weight: 600;
+    }
+
+    .toc-list-wrapper{
+      background: #181d3b;
+      border-radius: 50px 0 52px 52px;
+    }
+
+    .toc-list{
+      border-radius: 0 100px;
+      background: #fff;
+      margin: 0;
+      list-style: none;
+    }
+
+    .toc-list-item:not(:last-child){
+      margin-bottom: 15px;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
   </style>
 </head>
 
@@ -31,16 +64,37 @@
   <h1>The science behind galaxies!: Investigating galaxy formation using hydrodynamical simulations</h1>
   <img src="WebBanner2023.png" alt="Trulli" width="800" height="400">
   
-  <table id="toc-container">
-    <tr p class="toc-title"><th><h3>Table of contents</h3></th></tr>
-    <tr><td><a href="#Abstract">Abstract</a></td></tr>
-    <tr><td><a href="#Introduction">Introduction</a></td></tr>
-    <tr><td><a href="#Methodology">Methodology</a></td></tr>
-    <tr><td><a href="#Analysis and discussion">Analysis and discussion</a></td></tr>
-    <tr><td><a href="#Conclusion">Conclusion</a></td></tr>
-    <tr><td><a href="#References">References</a></td></tr>
-  </table>
+  <div class="toc-wrapper">
+    <div class="toc-header">
+      <h3 class="toc-heading">Table of contents</h3>
+    </div>
 
+    <div class="toc-list-wrapper">
+      <ul class="toc-list">
+      <li class="toc-list-item">
+        <a href="#Abstract">Abstract</a>
+      </li>
+      <li class="toc-list-item">
+        <a href="#Introduction">Introduction</a>
+      </li>
+      <li class="toc-list-item">
+        <a href="#Methodology">Methodology</a>
+      </li>
+      <li class="toc-list-item">
+        <a href="#Analysis and discussion">Analysis and discussion</a>
+      </li>
+      <li class="toc-list-item">
+        <a href="#Conclusion">Conclusion</a>
+      </li>
+      <li class="toc-list-item">
+        <a href="#References">References</a>
+      </li>
+    </ul>
+    </div>
+  </div>
+    
+    
+  
   <h3 id="Abstract">Abstract</h3>
   <pre id="Abstract_InText" class="ex1" style="font-size: 16px; white-space: pre-wrap;">
 The study of galaxy formation throughout history has played a huge role in understanding our own galaxy, but the structure of the universe itself, with some of the earliest galaxies being formed around "300-400 million years ago after the Big Bang" <a href="Retrieved from https://www.universetoday.com/articles/galaxies-were-already-dying-just-700-million-years-after-the-big-bang?">(Williams, 2025).</a>
@@ -55,7 +109,7 @@ Thus, FLAMINGO was determined to have the lowest rate of uncertainty for galaxie
   Hydrodynamical simulations are incredibly powerful tools that have allowed scientists to research how galaxies form. It is a type of simulation that uses mathematical equations of gravity and gas dynamics to show how galaxies form and evolve over time <a href="https://ned.ipac.caltech.edu/level5/Sept13/Silk/">(Galaxy Formation - Joseph Silk et al., 2013).</a>
   They are often reported to have an uncertainty of about 0.1 to 0.2 dex for the most part when working out stellar masses, with some reports even claiming a low uncertainty of 0.01 dex for ideal scenarios<a href="https://academic.oup.com/mnras/article/418/3/1587/1060932">Edward N. Taylor, 2011.</a> and a range of 0.3-0.5 dex for galaxies with intricate star formation histories<a href="https://academic.oup.com/mnras/article/435/1/87/1106259">Peter D. Mitchell, 2013</a>
   Researchers from the university of Leiden have developed a hydrodynamical simulation known as FLAMINGO, a model that is highly considered suitable for this task thanks to its use of of sub-grid prescriptions,simplified laws of physics, This allows it to study important properties such as stellar masses that are crucial for making predictions on how galaxies form. 
-  By taking into account the potential of hydrodynamical simulations, this paper asseses how hydrodynamical simulations can be used to model galaxy formation while also considering the strengths and weaknesses of FLAMINGO.
+  By taking into account the potential of hydrodynamical simulations, this paper asseses how hydrodynamical simulations can be used to model galaxy formation followed by an analysis of the strengths and weaknesses of FLAMINGO and considerations for possible improvements in its quality. <a href="https://arxiv.org/abs/2509.04552">Van Daalen et al. (2025)</a>
   
   </pre> 
 
