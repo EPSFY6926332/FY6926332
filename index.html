@@ -16,7 +16,7 @@
     }
 
     .toc-header{
-      background: black;
+      background: #181d3b;
       padding: 30px;
       border-radius: 50px 50px 0 100px;
       min-height: 100px;
@@ -39,17 +39,63 @@
     }
 
     .toc-list{
-      border-radius: 0 100px;
+      border-radius: 0 100px 50px 50px;
       background: #fff;
       margin: 0;
       list-style: none;
+      padding: 30px 50px;
     }
 
     .toc-list-item:not(:last-child){
       margin-bottom: 15px;
       border-bottom: 1px solid #e8e8e8;
     }
+    
+    .toc-list-item a{
+      position: relative;
+      color: #4c4c4c;
+      text-decoration: none;
+      font-weight: 600;
+      font-size:1.25em;
+      display: block;
+      padding: 10px 10px 10px 50px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: .2s ease;
+    }
 
+    .toc-list-item a:before{
+      content: '';
+      width: 25px;
+      height: 25px;
+      background-color: #f65964;
+      position: absolute;
+      border-radius: 50%;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    .toc-list-item a:hover{
+      box-shadow: 0 8px 15px rgb(246 90 100 / .55);
+      background-color: #f65964;
+      color: #fff;
+    }
+
+    .toc-list-item a:hover::before{
+      background: #fff;
+    }
+
+    .mainheadings{
+      color: #fff;
+      background-color: #181d3b;
+      width: auto;
+      border: 4px solid #f65964;
+      padding: 20px;
+      margin: 5px;
+      display: inline-block;
+    }
   </style>
 </head>
 
@@ -60,9 +106,9 @@
   <button onclick="verifyLastUpdatedTime()" style="display:block; margin:10px auto; padding:8px 16px;">
     Verify Last Modified Time
   </button>
-
-  <h1>The science behind galaxies!: Investigating galaxy formation using hydrodynamical simulations</h1>
-  <img src="WebBanner2023.png" alt="Trulli" width="800" height="400">
+  <img src="WebBanner2023.png" alt="Trulli" width="800" height="200">
+  <h1 class="mainheadings">The science behind galaxies!: Investigating galaxy formation using hydrodynamical simulations</h1>
+  
   
   <div class="toc-wrapper">
     <div class="toc-header">
@@ -95,7 +141,7 @@
     
     
   
-  <h3 id="Abstract">Abstract</h3>
+  <h3 id="Abstract" class="mainheadings">Abstract</h3>
   <pre id="Abstract_InText" class="ex1" style="font-size: 16px; white-space: pre-wrap;">
 The study of galaxy formation throughout history has played a huge role in understanding our own galaxy, but the structure of the universe itself, with some of the earliest galaxies being formed around "300-400 million years ago after the Big Bang" <a href="Retrieved from https://www.universetoday.com/articles/galaxies-were-already-dying-just-700-million-years-after-the-big-bang?">(Williams, 2025).</a>
 This paper aims to evaluate the effectiveness of hydrodynamical simulations in studying galaxy formation, which are well known and reliable computational methods used in this particular area of astrophysics <a href="https://arxiv.org/abs/2306.04024">(Joop Schaye, 2023).</a>
@@ -104,7 +150,7 @@ During its runtime, the model was observed to be exceptional at resolving stella
 Thus, FLAMINGO was determined to have the lowest rate of uncertainty for galaxies that were larger than 10⁹ solar masses <a href="https://arxiv.org/abs/2408.17217">(Roi Kugel, J 2015).</a>
   </pre>
 
-  <h3 id="Introduction">Introduction</h3>
+  <h3 id="Introduction" class="mainheadings">Introduction</h3>
   <pre id="Introduction_InText" class="ex1" style="font-size: 16px; white-space: pre-wrap;">
   Hydrodynamical simulations are incredibly powerful tools that have allowed scientists to research how galaxies form. It is a type of simulation that uses mathematical equations of gravity and gas dynamics to show how galaxies form and evolve over time <a href="https://ned.ipac.caltech.edu/level5/Sept13/Silk/">(Galaxy Formation - Joseph Silk et al., 2013).</a>
   They are often reported to have an uncertainty of about 0.1 to 0.2 dex for the most part when working out stellar masses, with some reports even claiming a low uncertainty of 0.01 dex for ideal scenarios<a href="https://academic.oup.com/mnras/article/418/3/1587/1060932">Edward N. Taylor, 2011.</a> and a range of 0.3-0.5 dex for galaxies with intricate star formation histories<a href="https://academic.oup.com/mnras/article/435/1/87/1106259">Peter D. Mitchell, 2013</a>
@@ -113,7 +159,7 @@ Thus, FLAMINGO was determined to have the lowest rate of uncertainty for galaxie
   
   </pre> 
 
-  <h3 id="Methodology">Methodology</h3>
+  <h3 id="Methodology" class="mainheadings">Methodology</h3>
   <pre id="Methodology_InText" class="ex1" style="font-size:16px; white-space:pre-wrap;">
     To evaluate the use of hydrodynamical simulations for studying galaxy formation. 
 <figure>
@@ -122,15 +168,15 @@ Thus, FLAMINGO was determined to have the lowest rate of uncertainty for galaxie
 </figure>
   </pre>
 
-  <h3 id="Analysis and discussion">Analysis and discussion</h3>
+  <h3 id="Analysis and discussion" class="mainheadings">Analysis and discussion</h3>
   <pre id="Analysis_InText" class="ex1" style="font-size: 16px; white-space: pre-wrap;">
   </pre>
 
-  <h3 id="Conclusion">Conclusion</h3>
+  <h3 id="Conclusion" class="mainheadings">Conclusion</h3>
   <pre id="Conclusion_InText" class="ex1" style="font-size: 16px; white-space: pre-wrap;">
   </pre>
 
-  <h3 id="References">References</h3>
+  <h3 id="References" class="mainheadings">References</h3>
   <pre id="References_InText" class="ex1" style="font-size: 16px; white-space: pre-wrap;">
   </pre>
 
