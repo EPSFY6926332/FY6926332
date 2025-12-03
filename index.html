@@ -107,13 +107,18 @@
     }
     
     .style-eight:after {
-    content: "§";
     display: inline-block;
     position: relative;
     top: -0.7em;
     font-size: 1.5em;
     padding: 0 0.25em;
     background: white;
+    }
+
+    .zoom:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5); 
     }
   </style>
 </head>
@@ -175,7 +180,6 @@ Thus, FLAMINGO was determined to have the lowest rate of uncertainty for galaxie
   They are often reported to have an uncertainty of about 0.1 to 0.2 dex for the most part when working out stellar masses, with some reports even claiming a low uncertainty of 0.01 dex for ideal scenarios<a href="https://academic.oup.com/mnras/article/418/3/1587/1060932">(Edward N. Taylor, 2011).</a> and a range of 0.3-0.5 dex for galaxies with intricate star formation histories<a href="https://academic.oup.com/mnras/article/435/1/87/1106259">(Peter D. Mitchell, 2013).</a>
   Researchers from the university of Leiden have developed a hydrodynamical simulation known as FLAMINGO, a model that is highly considered suitable for this task thanks to its use of of sub-grid prescriptions,simplified laws of physics, This allows it to study important properties such as stellar masses that are crucial for making predictions on how galaxies form. 
   By taking into account the potential of hydrodynamical simulations, this paper asseses how hydrodynamical simulations can be used to model galaxy formation followed by an analysis of the strengths and weaknesses of FLAMINGO and considerations for possible improvements in its quality. <a href="https://arxiv.org/abs/2509.04552">(Van Daalen et al (2025)).</a>
-  
   </pre> 
 
   <h3 id="Methodology" class="mainheadings">Methodology</h3>
@@ -185,7 +189,7 @@ Thus, FLAMINGO was determined to have the lowest rate of uncertainty for galaxie
     to ensure that the simulation was able to produce a realistic galaxy population based on the stellar mass distribution. This was done by using a subgrid model that is calibrated against real-world observations that other models are based on, which was plotted on a graph
     showing the relationship between the baryonic particles, the building blocks for modeling galaxies and responsible for forming the stellar mass that the SMF consists off, with the box side length, which determines how many galaxies can be modelled <a href="https://arxiv.org/abs/2306.04024">(Joop Schaye, 2023).</a>
 <figure>
-  <img src="Simulationflamingocp.png" alt="Trulli" width="500" height="600">
+  <img src="Simulationflamingocp.png" alt="Trulli" width="500" height="600" class="zoom">
   <figcaption>Fig.1 - Comparison of resolutions with solar masses for all the models (Joop Schaye, 2023).</figcaption>
 </figure>
   </pre>
